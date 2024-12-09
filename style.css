@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #ffffff;
+  background: #000000;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+header {
+  background: #000000;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideIn 1s ease-out;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+header nav ul li a:hover {
+  background: #494949;
+  border-radius: 5px;
+}
+
+.hero {
+  flex: 1;
+  text-align: center;
+  padding: 8rem 3rem;
+  background: url('JoxaStoreLogo.jpg') no-repeat center center/cover;
+  color: #ffffff;
+  min-height: calc(100vh - 4rem);
+  animation: fadeIn 1.5s ease-out;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.hero .btn {
+  background: #000000;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.hero .btn:hover {
+  transform: scale(1.1);
+  background: #494949;
+}
+
+footer {
+  background: #000000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  animation: fadeIn 2s ease-out;
+}
+
+@media (max-width: 1200px) {
+  header .logo {
+    font-size: 1.25rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero .btn {
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+    text-align: left; /* Mantiene los botones a la izquierda */
+  }
+
+  header .logo {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start; /* Botones alineados a la izquierda */
+  }
+
+  .hero {
+    padding: 5rem 2rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero .btn {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+
+  header nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Botones alineados a la izquierda */
+  }
+
+  .hero .btn {
+    width: 100%;
+    max-width: 300px; /* Evita que los botones sean demasiado grandes en móviles */
+  }
+}
